@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-2hb98045lbc+k!$n_x7$$t8s__8gn3(n5#o===7i(l09e5$eoc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,16 +41,22 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     "counter",
     "mathfilters",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://13.53.175.120',
 ]
 
 ROOT_URLCONF = "foodie.urls"
