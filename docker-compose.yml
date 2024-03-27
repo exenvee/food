@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./calorie_app:/calorie_app
+    ports:
+      - '8000:8000'
+ 
+  nginx:
+    restart: always
+    build:
+      context: ./nginx/
+    ports:
+      - "80:80"
