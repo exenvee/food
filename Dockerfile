@@ -17,4 +17,4 @@ RUN pip install -r requirements.txt
 # Copy the current directory contents into the container at /app
 COPY calorie_app /calorie_app
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "core.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "foodie.wsgi:application"]
